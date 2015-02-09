@@ -1,0 +1,34 @@
+server {
+    listen		80;
+    server_name 	dirkjanwinnubst.nl * .dirkjanwinnubst.nl;
+    return		301 $scheme://www.dirkjanwinnubst.nl$request_uri;
+    }
+
+server {
+    listen		80;
+    server_name		www.dirkjanwinnubst.nl
+
+    index index.html;    
+    root /vagrant;
+    }
+
+server {
+    listen		80;
+    server_name		www.dirkjanwinnubst.nl
+
+    index index.php;
+    root /vagrant;
+    }
+
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+
+    location ~ .php$ {
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_pass 127.0.0.1:4567;
+    }
+}

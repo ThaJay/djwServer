@@ -1,0 +1,38 @@
+html,body{height:100%;}
+*{margin:0;padding:0;font-family:robotoregular;font-size:1vw;}
+
+body
+{
+    background-color:rgb(220,220,220);
+}
+
+header
+{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	top: 5vw;
+	width: 50%;
+	height: 33%;
+	background-color: rgb(240,240,240);
+}
+
+header p
+{
+	position: relative;
+	font-size: 3vw;
+	text-align: center;
+	top:45%;
+	transform: translate( 0%, -50%);
+}
+
+header #headerSubs
+{
+	font-size: 1vw;
+	font-style: italic;
+}
+
+/*
+#id
+.class
+*/
